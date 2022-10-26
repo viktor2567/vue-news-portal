@@ -82,6 +82,7 @@ export default {
 .carousel{
   margin: 30px;
   width: 55%;
+  margin: 30px auto;
 }
 .video{
   width: 100%;

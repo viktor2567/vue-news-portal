@@ -15,7 +15,10 @@
         <router-link to="/contact"> Контакти </router-link>
       </div>
     </div>
-   
+    <div class="marquee "> 
+ 
+       <marquee direction="left" scrollamount="7"> 📞 Телефони довіри НГУ: (044) 249-27-82, (044) 226-22-52 Регіональні – за посиланням 📞 Телефони довіри НГУ: (044) 249-27-82, (044) 226-22-52 Регіональні – за посиланням</marquee>
+</div>
   </div>
 </template>
 
@@ -33,8 +36,8 @@
     justify-content: start;
     align-items: center;
     background-color: rgb(68, 86, 70);
-   
-    border-radius: 5px;
+
+ 
   }
 
   .nav-bar-items {
@@ -79,6 +82,16 @@
     height: 200px;
     width: auto;
     padding: 10px 5px 30px 0;
+  }
+ 
+  marquee{
+font-size: 18px;
+color: rgb(5, 56, 14);
+  }
+  .marquee{
+    background-color: rgb(255, 255, 255);
+    z-index: 10;
+  
   }
 
 </style>
