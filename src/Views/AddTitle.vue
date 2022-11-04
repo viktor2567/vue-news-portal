@@ -1,14 +1,18 @@
 <template>
   <div class="container container-add-title">
     <div class="title">
-      <h2>Title</h2>
-      <input v-model="article.title" type="text" :class="{ 'border-danger': $v.article.title.$invalid }" class="input-title">
+      <h2>Тема поста</h2>
+      <input v-model="article.title" type="text" :class="{ 'border-danger': $v.article.title.$invalid }" class="input-title" placeholder="тема">
+    </div>
+    <div class="title">
+      <h2>Картинка поста</h2>
+      <input v-model="article.img" type="text" :class="{ 'border-danger': $v.article.img.$invalid }" class="input-title" placeholder="url картинки">
     </div>
     <div class="body">
-      <h2>Body</h2>
-      <textarea v-model="article.body" :class="{ 'border-danger': $v.article.body.$invalid }" class="form-control body-text" aria-label="With textarea"></textarea>
+      <h2>Опис поста</h2>
+      <textarea v-model="article.body" :class="{ 'border-danger': $v.article.body.$invalid }" class="form-control body-text" aria-label="With textarea" placeholder="текст"></textarea>
     </div>
-    <button :disabled="$v.article.$invalid" class="button-add-title btn btn-info" @click="addPost" > Add </button>
+    <button :disabled="$v.article.$invalid" class="button-add-title btn btn-info" @click="addPost" > Опублікувати </button>
   </div>
 </template>
 
@@ -23,6 +27,7 @@
       return {
         article: {
          title: '',
+         img:'',
          body: ''          
         }
       }
@@ -36,6 +41,7 @@
     validations: {
       article: {
         title: { required },
+        img:{required},
         body: { required }
       }
     }
@@ -62,6 +68,9 @@
 
   .button-add-title {
     margin: 10px;
+  }
+  .title{
+    margin-bottom: 30px;
   }
   
 </style>

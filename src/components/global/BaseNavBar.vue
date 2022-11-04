@@ -1,19 +1,27 @@
 <template>
   <div class="nav-bar ">
+    
     <div class=" nav-bar-logo">
       <router-link to="/home">
+        
         <img src="@/assets/logo.png"/>
       </router-link>
       <h1 class="color" >НАЦІОНАЛЬНА ГВАРДІЯ УКРАЇНИ</h1>
       <h4 class="color">ЧЕСТЬ*МУЖНІСТЬ*ЗАКОН</h4>
     </div>
-    <div class="col-md-6 nav-bar-items">
+    <div class=" col-md-6 nav-bar-items ">
       <div class="nav-bar-items-top">
         <router-link to="/home"> Новини </router-link>
-        <router-link to="/addtitle"> Add Article </router-link>
-        <router-link to="/category"> Category </router-link>
         <router-link to="/contact"> Контакти </router-link>
+        <router-link v-if="active == false" to="/addtitle"> Add Article </router-link>
       </div>
+      
+      <!-- <div class="con-switch">
+      <div class="d-flex">
+      <h5 v-if="active == true">developer mode</h5>
+      <vs-switch class="switch" v-model="active"/>
+    </div> -->
+    <!-- </div> -->
     </div>
     <div class="marquee "> 
  
@@ -24,6 +32,10 @@
 
 <script>
   export default {
+    data:() => ({
+       active: false
+      }),
+
     name: 'base-NavBar',
     props: {
       msg: String,
@@ -35,7 +47,7 @@
   .nav-bar {
     justify-content: start;
     align-items: center;
-    background-color: rgb(68, 86, 70);
+    background-color:rgb(51, 68, 38);
 
  
   }
@@ -92,6 +104,15 @@ color: rgb(5, 56, 14);
     background-color: rgb(255, 255, 255);
     z-index: 10;
   
+  }
+  .con-switch{
+
+  }
+  .switch{
+    width: 30px;
+    height: 25px;
+    margin-left: 5px;
+
   }
 
 </style>

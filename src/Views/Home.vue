@@ -1,93 +1,129 @@
 
 <template>
-  <div>
-    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="false">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="../assets/carusel1.jpeg" class="d-block" alt="...">
-      <div class="carousel-caption d-none ">
-        <h2>Міністр внутрішніх справ України нагородив гвардійців біля стін Святої Софії</h2>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="../assets/carusel2.jpeg" class="d-block " alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h2>БРИФІНГИГОЛОВНЕ В Нацгвардії створено 130 мобільних вогневих груп для протидії ударним дронам</h2>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="../assets/carusel3.jpeg" class="d-block " alt="...">
-      <div class="carousel-caption d-none d-md-block">
-    
-        <h2>Президент вручив відзнаки «За мужність та відвагу» 4 військовим частинам Нацгвардії України</h2>
-      </div>
-    </div>
-  </div>
-  <button class="btn carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="btn carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div> 
+  <div class="content" data-bs-spy="scroll">
+    <Carusel/>
+    <div class="d-flex">
+      <vs-card-group>
+    <vs-card v-for="post in allPosts" :key="post.key" @click="handleClick"  data-bs-toggle="modal" data-bs-target="#exampleModal" v-on:click="idCard(post.id)">
+      <template #img>
+        <img :src="post.img" alt="">
+      </template>
+      <template #title>
+        <h3>{{post.title}}</h3>
+      </template>
+      <template #text>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        </p>
+      </template>
+    </vs-card>
+  </vs-card-group>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
+  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+</svg></button>
 
-   <div class="row row-cols-3  row-cols-md-4 g-4">
-  <div class="col-3" v-for="post in allPosts">
-    <div class="card" >
-      <img src="../assets/1.jpeg"  class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">{{post.title}}</h5>
-        <p class="card-text">{{post.body}}</p>
-      </div>
-    </div>
-  </div>
-  </div>
+            </div>
+            <div class="modal-body" v-for="card in allCard">
 
-  <div>
-    <h1>Відео Національної гвардії України</h1>
-    <iframe width="90%" height="700px" src="https://www.youtube.com/embed/bL9k8CNWV04" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
-</div>
-  <!-- <div class="container">
+              <img class="cadr-img" :src="card.img" style="width:100%">
+              <h1>{{ card.title }}</h1>
+              <h1 class="description-modal">{{ card.body }}</h1>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
    
-    <div class="posts-list">
-      <div v-for="post in allPosts" class="post-preview">
-        <h2> {{post.title}} </h2>
-        <p> {{post.body}} </p>
-      </div>
+
+
+
+
+
+    <div >
+      <h1>Відео Національної гвардії України</h1>
+      <iframe width="90%" height="500px" src="https://www.youtube.com/embed/bL9k8CNWV04" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
     </div>
-  </div> -->
+    <div class="social justify-content-around mt-5">
+<Facebook/>
+<Inst/>
+</div>
+</div>
 
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
+import { mapGetters, mapActions } from 'vuex';
+import Inst from '../components/instagram.vue'
+import Carusel from '../components/carusel.vue'
+import Facebook from '../components/facebook.vue';
 export default {
+  data:() => ({
+    
+    return: {
+        page: 10,
+      }
+  }),
   name: 'home',
+  methods: {
+    ...mapActions(['idCard', 'Delete'])
+  },
   computed: {
-    ...mapGetters(['allPosts','postsCount','users']),
+
+    ...mapGetters(['allPosts', 'allCard']),
+
+  },
+  components:{
+    Inst,
+    Carusel,
+    Facebook
   }
 }
+
+
+
 </script>
 
 <style scoped>
-.carousel{
-  margin: 30px;
-  width: 55%;
-  margin: 30px auto;
-}
-.video{
-  width: 100%;
-height: 100%;
-  background: url(https://youtu.be/bL9k8CNWV04);
+
+.content{
+  margin: 0 3%;
 }
 
+.modal-dialog {
+  max-width: 70%;
+}
+
+.description-modal {
+  font-size: 20px;
+}
+
+
+.social{
+  display: flex;
+}
+
+@media (max-width: 992px) {
+  .content{
+    margin: 0 1%;
+  }
+.social{
+  display:inline-block;
+}
+  
+  
+ 
+
+}
 </style>
+
