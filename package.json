@@ -6,8 +6,8 @@
   },
 
   "scripts": {
-    "serve": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve && json-server ./db.json ",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build && json-server ./db.json",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
     "server": "json-server ./db.json"
   },
   "dependencies": {
