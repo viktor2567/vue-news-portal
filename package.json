@@ -4,10 +4,10 @@
   "engines": {
     "node": "14.x"
   },
-  "private": true,
+
   "scripts": {
     "serve": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve && json-server ./db.json ",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build && json-server ./db.json",
     "server": "json-server ./db.json"
   },
   "dependencies": {
