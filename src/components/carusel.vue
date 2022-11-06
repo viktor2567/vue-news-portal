@@ -33,12 +33,19 @@ export default{
 
 <style>
 .carousel {
-    width: 100%;
+
   margin: 30px auto ;
-  width: 60%;
+  width: 80%;
 
 }
 .d-block{
     width: 100%;
+}
+@media (max-width: 992px) {
+.carousel{
+    width: 100%;
+}
+
+
 }
 </style>
