@@ -1,9 +1,15 @@
 <template>
   <div class="nav-bar ">
-    
+    <div class="con-switch">
+      <div class="d-flex">
+      
+      <vs-switch class="switch" v-model="active"/>
+      <h5 v-if="active == true">developer mode</h5>
+    </div>
+     </div> 
     <div class=" nav-bar-logo">
       <router-link to="/home">
-        
+       
         <img src="@/assets/logo.png"/>
       </router-link>
       <h1 class="color" >НАЦІОНАЛЬНА ГВАРДІЯ УКРАЇНИ</h1>
@@ -13,15 +19,10 @@
       <div class="nav-bar-items-top">
         <router-link to="/home"> Новини </router-link>
         <router-link to="/contact"> Контакти </router-link>
-        <router-link v-if="active == false" to="/addtitle"> Add Article </router-link>
+        <router-link v-if="active == true" to="/addtitle"> Add Article </router-link>
       </div>
       
-      <!-- <div class="con-switch">
-      <div class="d-flex">
-      <h5 v-if="active == true">developer mode</h5>
-      <vs-switch class="switch" v-model="active"/>
-    </div> -->
-    <!-- </div> -->
+      
     </div>
     <div class="marquee "> 
  
