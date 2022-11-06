@@ -1,4 +1,4 @@
-# Vue spa application
+# Vue NGU application
 > Hello everybody. My name is Viktor and I`m from Ukraine.  
 > Im junior ~~frontend developer~~!  
 > This is my pet project (news portal) on vue.js  
