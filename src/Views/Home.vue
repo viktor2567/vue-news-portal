@@ -51,14 +51,14 @@
     </div>
     <div class="social justify-content-around mt-5">
       <Facebook />
-      <Inst />
+      <Twit />
     </div>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
-import Inst from '../components/instagram.vue'
+import Twit from '../components/Twitter.vue'
 import Carusel from '../components/carusel.vue'
 import Facebook from '../components/facebook.vue';
 export default {
@@ -78,7 +78,7 @@ export default {
 
   },
   components: {
-    Inst,
+    Twit,
     Carusel,
     Facebook
   }
