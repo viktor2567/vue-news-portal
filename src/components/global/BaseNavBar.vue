@@ -17,7 +17,7 @@
       <div class="nav-bar-items-top">
         <router-link to="/home"> Новини </router-link>
         <router-link to="/contact"> Контакти </router-link>
-        <router-link v-if="active == true" to="/addtitle"> Add Article </router-link>
+        <router-link v-if="active == true" to="/addtitle"> Додати пост </router-link>
       </div>
     </div>
     <div class="marquee ">

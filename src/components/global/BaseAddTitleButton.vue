@@ -1,7 +1,7 @@
 <template>
   <div class="add-title">
     <router-link to="/addtitle">
-      <button type="button" class="btn button-add-title">Add Post</button>
+      <button type="button" class="btn button-add-title">Опублікувати</button>
     </router-link>
   </div>
 </template>
