@@ -5,7 +5,9 @@
     "node": "14.x"
   },
   "scripts": {
-   
+    "serve": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve ",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build "
+    
     
   },
   "dependencies": {
