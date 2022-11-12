@@ -6,7 +6,7 @@
   },
   "scripts": {
     "serve": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve ",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build "
+    "build": " vue-cli-service build "
     
     
   },
