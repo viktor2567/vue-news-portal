@@ -5,10 +5,8 @@
     "node": "14.x"
   },
   "scripts": {
-    "serve": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve ",
-    "build": "vue-cli-service build ",
-    "server": "json-server ./db.json",
-    "start": "node server.js"
+   
+    
   },
   "dependencies": {
     "axios": "^0.19.0",

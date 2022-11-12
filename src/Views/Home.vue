@@ -1,6 +1,7 @@
 
 <template>
   <div class="content" data-bs-spy="scroll">
+    
     <Carusel />
     <div class="d-flex">
       <vs-card-group>
@@ -18,7 +19,7 @@
           </template>
         </vs-card>
       </vs-card-group>
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" v-if="active = true"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">

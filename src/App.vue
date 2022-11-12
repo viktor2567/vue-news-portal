@@ -11,9 +11,13 @@
 
 <script>
 import { mapActions, mapMutations } from 'vuex'
-
+alert("HELLO")
 export default {
   name: 'app',
+  data:() => ({
+    
+  
+  }),
   methods: {
     ...mapActions(['fetchPosts']),
   },
